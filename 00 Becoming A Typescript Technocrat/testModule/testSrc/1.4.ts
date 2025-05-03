@@ -230,6 +230,65 @@ const newAdd: Add = (num1, num2) => num1 + num2;
 
 
 
+
+// Union Types -------------------------------------------------------
+type FrontendDeveloper =  'Junior' | 'Senior'   
+type FullStackDeveloper = 'FrontEndDeveloper' | 'BackEndDeveloper'
+/*
+ Here, '|' indicates 'FrontendDeveloper' can be either 'Junior' or 'Senior'. 
+ So, it is union type.   
+*/
+
+
+// Merging two types
+type Developer = FrontendDeveloper | FullStackDeveloper;
+
+
+const newDeveloper:FrontendDeveloper = 'Junior';
+
+
+// Union type in object
+type PreUser = {
+    name:string;
+    email:string;
+    gender:'male'|'female';
+    bloodGroup: 'O+'|'A+'|'AB+'
+}
+
+const user1: PreUser = {
+    name: 'Farhan',
+    gender: 'male',
+    bloodGroup: 'O+',
+    email: 'yesmail@email.com'
+}
+
+
+
+
+// Intersection types
+type NewFrontEndDeveloper = {
+    skills1: string[];
+    designation: 'Front End Developer'
+}
+
+type NewBackEndDeveloper = {
+    skills2: string[];
+    designation: 'Back End Developer';
+}
+
+type NewFullStackDeveloper = NewFrontEndDeveloper & NewBackEndDeveloper;
+/*
+ Here, '&' indicates 'NewFullStackDeveloper' has the both type of 'NewFrontEndDeveloper' 
+ and 'NewBackEndDeveloper'. So, it is intersection type.   
+*/
+
+
+const fullStackDeveloper1 : NewFullStackDeveloper = {
+    skills1: ['HTML', 'CSS', 'EXPRESS'],
+    designation23: 'Front End Developer'
+}
+
+
 } 
 /*
  * Here '{}' is confining file into a single scope. 
