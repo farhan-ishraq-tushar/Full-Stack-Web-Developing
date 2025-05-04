@@ -284,8 +284,8 @@ type NewFullStackDeveloper = NewFrontEndDeveloper & NewBackEndDeveloper;
 
 
 const fullStackDeveloper1 : NewFullStackDeveloper = {
-    skills1: ['HTML', 'CSS', 'EXPRESS'],
-    designation23: 'Front End Developer'
+    // skills1: ['HTML', 'CSS', 'EXPRESS'],
+    // designation23: 'Front End Developer'
 }
 
 
