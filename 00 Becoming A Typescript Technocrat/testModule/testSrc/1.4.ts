@@ -7,7 +7,7 @@
 let firstName = 'Farhan' // explicit type define
 
 // Implicit type -- defined by us
-let middName :string = 'Ishraq' // implicit type define
+let middleName :string = 'Ishraq' // implicit type define
 
 //number
 let roll:number = 123; 
@@ -67,7 +67,7 @@ const user:{
 }
 
 /*
-user.firstName // We can access any proper by this way.
+user.firstName // We can access any property by this way.
 */
 
 
@@ -124,7 +124,7 @@ const totalList = {
 
 
 
-// !!!Research more M1-->1-7--> 7.27min
+// !!!Research more PH-> L2 M1-->1-7--> 7.27min
 // Rest Operator -------------------------
 const greetFriends = (...friends: string[]) => {
     // console.log(`Hi ${friend1} ${friend2} ${friend3}`)
@@ -267,13 +267,13 @@ const user1: PreUser = {
 
 // Intersection types
 type NewFrontEndDeveloper = {
-    skills1: string[];
-    designation: 'Front End Developer'
+    skills: string[];
+    designation1: 'Frontend Developer'
 }
 
 type NewBackEndDeveloper = {
-    skills2: string[];
-    designation: 'Back End Developer';
+    skills: string[];
+    designation2: 'Backend Developer';
 }
 
 type NewFullStackDeveloper = NewFrontEndDeveloper & NewBackEndDeveloper;
@@ -284,9 +284,49 @@ type NewFullStackDeveloper = NewFrontEndDeveloper & NewBackEndDeveloper;
 
 
 const fullStackDeveloper1 : NewFullStackDeveloper = {
-    // skills1: ['HTML', 'CSS', 'EXPRESS'],
-    // designation23: 'Front End Developer'
+    skills: ['HTML', 'CSS', 'EXPRESS'],
+    designation1: 'Frontend Developer' ,
+    designation2: 'Backend Developer', 
 }
+
+
+
+
+// ternary operator || optional chaining || nullish coalescing operator
+/*
+// 'ts-node-dev' this package allows to render JS in TS file. 
+Install(globally) cmd: npm i -g ts-node-dev --save-dev
+Web link: https://www.npmjs.com/package/ts-node-dev
+
+To run: ts-node-dev --respawn --transpile-only 'fileLocation'
+*/ 
+const age: number = 15
+if(age >=18){
+    console.log('adult');
+}else{
+    console.log('not adult');
+}
+
+const isAdult = age >=18 ? 'adult' : 'not adult';
+console.log({isAdult});
+
+
+
+
+
+// Nullish coalescing operator 
+// -> used when decision is made based on null/undefined  
+const isAuthenticated = null;
+const result1 = isAuthenticated ?? "Guest";
+const result2 = isAuthenticated ? isAuthenticated : "Guest";
+console.log({result1}, {result2}); // Guest Guest
+
+
+
+
+
+
+
 
 
 } 
