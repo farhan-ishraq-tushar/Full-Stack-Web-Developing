@@ -290,7 +290,7 @@ const fullStackDeveloper1 : NewFullStackDeveloper = {
 }
 
 
-
+// --------------------------------------------------------------------
 
 // ternary operator || optional chaining || nullish coalescing operator
 /*
@@ -304,32 +304,104 @@ const age: number = 15
 if(age >=18){
     console.log('adult');
 }else{
-    console.log('not adult');
+    console.log('not adult'); // Output: not adult
 }
 
 const isAdult = age >=18 ? 'adult' : 'not adult';
-console.log({isAdult});
+console.log({isAdult}); // Output: { isAdult: 'not adult' }
 
 
 
 
 
 // Nullish coalescing operator 
-// -> used when decision is made based on null/undefined  
+// -> used when decision is made based on null/undefined 
+// Example: 1 
+/*
 const isAuthenticated = null;
 const result1 = isAuthenticated ?? "Guest";
 const result2 = isAuthenticated ? isAuthenticated : "Guest";
-console.log({result1}, {result2}); // Guest Guest
+console.log({result1}, {result2}); // Output: { result1: 'Guest' } { result2: 'Guest' }
+*/
+
+// Example: 2
+const isAuthenticated = '';
+const result1 = isAuthenticated ?? "Guest";
+const result2 = isAuthenticated ? isAuthenticated : "Guest";
+console.log({result1}, {result2}); // Output: { result1: '' } { result2: 'Guest' }
 
 
 
+// User of Optional Type & Optional Chaining
+type User = {
+    name: string;
+    address: {
+        city: string;
+        road: string;
+        presentAddress: string;
+        permanentAddress?: string; // User of Optional Type
+    }
+}
+
+    const user3: User ={
+        name: 'Farhan',
+        address: {
+            city: 'Savar',
+            road: 'Rrajashion',
+            presentAddress: 'Savar Town'
+        }
+    }
+
+    // Use of Optional Chaining.
+    const permanentAddress = user3?.address?.permanentAddress ?? 'No Permanent address'
+    // Here, 'No Permanent address' is shown when no permanentAddress is found. It, prevents application crashing.
+    console.log({permanentAddress}) // Output: { permanentAddress: 'No Permanent address' }
 
 
 
+    // ----------------------------------------------------------------------------
+    // nullable types
+    const searchName = (value: string | null)=>{
+        if(value){
+            console.log("Searching");
+        } else {
+            console.log("There is nothing to search");
+        }
+    };
+
+    searchName(null);
 
 
+    // unknown typeof
+    const getSpeedInMeterPerSecond = (value:unknown)=>{
+        if(typeof value === 'number'){
+            const convertedSpeed = (value*1000) / 3600;
+            console.log(`The converted speed is ${convertedSpeed} m/s`)
+        }
 
+        else if (typeof value === 'string') {
+            const [numberPartInValue, unitPartInValue] = value.split('');
+            const convertedSpeed = (parseFloat(numberPartInValue)*1000) / 3600;
+            console.log(numberPartInValue); 
+            console.log(convertedSpeed);
+        }
+
+     else {
+        console.log('Wrong Input')
+    }
+    getSpeedInMeterPerSecond(`1000 m/s`)
 } 
+
+
+
+
+// never type
+const throwError = (msg: string): never => {
+    throw new Error(msg);
+}
+throwError("Input is wrong")
+
+
 /*
  * Here '{}' is confining file into a single scope. 
 
@@ -338,4 +410,4 @@ console.log({result1}, {result2}); // Guest Guest
 
 
 
-
+}
