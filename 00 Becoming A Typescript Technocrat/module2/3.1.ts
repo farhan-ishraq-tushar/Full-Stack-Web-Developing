@@ -1,14 +1,15 @@
 {
   //
 
-  // type assertion
+  // type assertion -> Specifying type by developer. For type assertion process: (nameOfVariable + as + typeName)  
   let anything: any;
 
   anything = "Next Level Web Development";
+  // (anything as string).     
 
   anything = 222;
-
-  // (anything as number).
+  
+  // (anything as number).     
 
   const kgToGm = (value: string | number): string | number | undefined => {
     if (typeof value === "string") {
