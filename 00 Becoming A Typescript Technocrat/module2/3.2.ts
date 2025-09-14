@@ -1,12 +1,15 @@
 {
   // interface
 
+  // type declaration process
   type User1 = {
     name: string;
     age: number;
   };
 
+  // interface declaration process. We can't use '=' sign during this declaration. 
   interface User2 {
+    // In previous example we used '=' sign after 'User1' but here we are not using '=' sign after 'User2'.
     name: string;
     age: number;
   }
