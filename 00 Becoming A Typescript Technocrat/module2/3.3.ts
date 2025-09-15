@@ -1,7 +1,13 @@
 {
-  // generic type
+  // generic type: generating types dynamically and reusing them as our need
 
-  type GenericArray<T> = Array<T>;
+  type GenericArray<T> = Array<T>; 
+  /*
+   Here, 'T' is the parameter. It is always inside '<>'. 
+   This parameter can be string, number or boolean based on situation.
+
+   'GenericArray<T> = Array<T>' means whenever we use 'GenericArray' 
+  */
 
   // const rollNumbers: number[] = [3, 6, 8];
   const rollNumbers: GenericArray<number> = [3, 6, 8];

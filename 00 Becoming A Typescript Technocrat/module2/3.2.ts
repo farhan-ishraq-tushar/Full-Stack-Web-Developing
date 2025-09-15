@@ -14,9 +14,9 @@
     age: number;
   }
 
-  type UserWithRole1 = User1 & { role: string };
-
-  interface UserWithRole2 extends User1 {
+  type UserWithRole1 = User1 & { role: string }; // extending type using intersection &.
+ 
+  interface UserWithRole2 extends User1 { // 'extends' is extending extra property of 'User1' in 'UserWithRole2'
     role: string;
   }
 
@@ -32,16 +32,19 @@
 
   type Roll1 = number[];
 
+  // interface with array 
   interface Roll2 {
-   [index : number ] : number
+   [index : number ] : number // index is number type data and the value that index holding is also a number type data. 
   }
 
-  const rollNumber1: Roll2 = [1,2,3]
-                              0 1 2 --> number type
+  // const rollNumber1: Roll2 = [1,2,3]
+  //                             0 1 2 --> number type
 
 
+  // type alias in function
   type Add1 = (num1: number,num2:number)=> number
   
+  // interface in function 
   interface Add2 {
     (num1: number,num2:number) : number
   }
