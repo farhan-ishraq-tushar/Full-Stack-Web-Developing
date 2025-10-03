@@ -1,8 +1,15 @@
 {
-  // constraints
+  // constraints -> means enforcing rules 
 
   const addCourseToStudent = <
-    T extends { id: number; name: string; email: string }
+    T extends { id: number; name: string; email: string } 
+    /*
+      Here, 'extends { id: number; name: string; email: string }'
+      means any object that is sent to 'addCourseToStudent' must have
+      property type of 'id: number; name: string; email: string'. As we
+      we are enforcing specific type to the property, it is called 
+      constraints.   
+    */
   >(
     student: T
   ) => {

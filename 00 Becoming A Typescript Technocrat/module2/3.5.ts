@@ -1,24 +1,32 @@
 {
   // function with generics
 
-  const createArray = (param: string): string[] => {
-    return [param];
+  // Function with type alias
+  const createArray = (param: string): string[] => { 
+    // 'string[]' means return type of createArray function is string type array
+    return [param]; 
+    // "[param]" means function is returning string type array.
   };
+  const res1 = createArray("Bangladesh");
+   
+// ------------------------------------------------------------------------
 
+  // Function with generic type
   const createArrayWithGeneric = <T>(param: T): T[] => {
     return [param];
   };
-
-  const res1 = createArray("Bangladesh");
   const resGeneric = createArrayWithGeneric<string>("Bangladesh");
+  // console.log(resGeneric);
 
+// ---------------------------------------------------------------
   type User = { id: number; name: string };
-
   const resGenericObj = createArrayWithGeneric<User>({
     id: 222,
     name: "Mr. Pashan",
   });
 
+  
+// -------------------------------------------------------------------------
   const createArrayWithTuple = <T, Q>(param1: T, param2: Q): [T, Q] => {
     return [param1, param2];
   };
@@ -28,6 +36,8 @@
     name: "Asia",
   });
 
+
+  // ------------------------------------------------------------------------
   const addCourseToStudent = <T>(student: T) => {
     const course = "Next Level Web Development";
     return {

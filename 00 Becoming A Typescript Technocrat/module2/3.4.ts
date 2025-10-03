@@ -1,7 +1,8 @@
 {
-  // intercae - generic
+  // generic interface
 
-  interface Developer<T, X = null> {
+  interface Developer<T, X = null> { 
+    // 'null' indicates if no parameter is available send no type
     name: string;
     computer: {
       brand: string;
@@ -61,7 +62,7 @@
       model: "Yamaha",
       engineCapacity: "100cc",
     },
-  };
+  }
 
   //
 }
