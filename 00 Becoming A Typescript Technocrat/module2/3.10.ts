@@ -7,7 +7,7 @@
   const arrOfStrings: string[] = arrOfNumbers.map((number) =>
     number.toString()
   );
-  console.log(arrOfStrings);
+  console.log(arrOfStrings); // ['1','4','5']
 
   type AreaNumber = {
     height: number;
@@ -23,6 +23,8 @@
 
   // T => {height:string;width:number}
   // key => T["width"]
+
+  // Type mapping 
   type AreaString<T> = {
     [key in keyof T]: T[key];
   };

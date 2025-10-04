@@ -1,5 +1,6 @@
 {
   //utility types
+  
   // Pick
   type Person = {
     name: string;
@@ -8,6 +9,7 @@
     contactNo: string;
   };
 
+  // Picking up types
   type NameAge = Pick<Person, "name" | "age">;
 
   // Omit

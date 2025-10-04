@@ -1,6 +1,5 @@
-{
+ {
   // promise
-
   type Todo = {
     id: number;
     userId: number;

@@ -1,5 +1,5 @@
 {
-  //conditional type
+  //conditional type -> When one type is dependent to another type
 
   type a1 = number;
   type b1 = string;
